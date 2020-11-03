@@ -12,3 +12,4 @@ export const app = firebase.initializeApp({
     "messagingSenderId": "712835616886",
     "measurementId": "G-2Q98NNLX68"
   });
+  
