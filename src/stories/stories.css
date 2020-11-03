@@ -11,6 +11,8 @@
 }
 
 .story-circle-box {
+  object-fit: cover;
+  cursor: pointer;
   height: 60px;
   width: 60px;
   border-radius: 50%;
@@ -61,15 +63,17 @@
 .arrow-span-scroll {
   position: absolute;
   cursor: pointer;
-  width: 30px;
-  top: 22%;
+  width: 90px;
+  top: -16%;
   transform: rotateZ(180deg);
-  left: -5px;
+  left: -68px;
+ 
 }
 .arrow-span-scroll-two {
   position: absolute;
   cursor: pointer;
-  width: 30px;
-  top: 22%;
-  right: -5px;
+  width: 90px;
+  top: -30%;
+  right: -55px;
+  
 }

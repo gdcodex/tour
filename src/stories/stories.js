@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {Link} from 'react-router-dom';
 import { useHttp } from "../shared/hooks/http-hook";
 import "./stories.css";
 function Stories() {
@@ -11,13 +12,25 @@ function Stories() {
   useEffect(() => {
     sendRequest(process.env.REACT_APP_BACKEND_URL + "/stories")
       .then((data) => {
-        setstory(data.stories);
+        let array= data.stories
+        array.map((e, i) => {
+          array.map((v, ii) => {
+            if (i !== ii) {
+              if(e.creator === v.creator) array.splice(ii, 1);
+            }
+            return;
+          });
+        });
+        setstory(array);
+        console.log(array)
       })
       .catch((err) => {
         console.log(err);
       });
      
   }, [sendRequest]);
+
+  
 
   return (
     <>
@@ -37,7 +50,7 @@ function Stories() {
           />
           <div className="stories-container">
             {story.map((s, i) => (
-              <img key={s.storyUrl + i} src={s.storyUrl} alt="V" className="story-circle-box"/>
+              <Link key={s.storyUrl + i} to={'/stories/' + s.id}><img  src={s.imageUrl} alt="V" className="story-circle-box"/></Link>
               
             ))}
           </div>
