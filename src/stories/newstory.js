@@ -91,7 +91,7 @@ const NewPlace = () => {
       )}
       {isSuccess && (
         <ErrorModal
-          error="Place succesfully shared"
+          error="Story succesfully shared"
           header="Congrtulations !!"
           onClear={()=>{setisSuccess(false)}}
         />

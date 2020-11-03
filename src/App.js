@@ -18,6 +18,7 @@ import { AuthContext } from "./shared/context/auth-context";
 import ErrorModal from "./shared/components/UIElements/ErrorModal";
 import LoadingSpinner from "./shared/components/UIElements/LoadingSpinner";
 import { useHttp } from "./shared/hooks/http-hook";
+import Storyview from "./stories/storyview";
 
 function App() {
   const [token, settoken] = useState(null);
@@ -79,6 +80,7 @@ function App() {
         <Route path="/:userId/places" exact component={Userplaces} />
         <Route path="/places/new" exact component={Newplace} />
         <Route path="/story/new" exact component={Newstory} />
+        <Route path="/stories/user/:userId" exact component={Storyview} />
         <Route path="/places/:placeId" exact component={Updateplace} />
         <Redirect to="/" />
       </Switch>
@@ -93,6 +95,7 @@ function App() {
             component={Users}
           />
           <Route path="/:userId/places" component={Userplaces} />
+          <Route path="/stories/user/:userId" exact component={Storyview} />
           <Route path="/auth" exact component={Auth} />
           <Redirect to="/auth" />
         </Switch>

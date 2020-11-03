@@ -1,0 +1,43 @@
+.story-view {
+  padding: 200px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background-color: rgb(37, 34, 34);
+}
+.story-view::before{
+    content: "";
+    background-color: rgb(37, 34, 34);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 7rem;
+    
+}
+.story-view-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  width: 80%;
+  border: 3px solid #FCD80C;
+  transform: translateY(-3rem);
+}
+.story-view-box img {
+  object-fit: cover;
+  width: 60%;
+ 
+}
+.close-story-view {
+  position: absolute;
+  width: 50px;
+  top: 80px;
+  left: 80vw;
+}
+.story-time{
+    color: seashell;
+    font-style: italic;
+    align-self: flex-start;
+}

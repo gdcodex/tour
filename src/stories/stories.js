@@ -1,36 +1,32 @@
 import React, { useState, useEffect } from "react";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { useHttp } from "../shared/hooks/http-hook";
 import "./stories.css";
 function Stories() {
   const [story, setstory] = useState(null);
 
- 
-
-  const {  sendRequest } = useHttp();
+  const { sendRequest } = useHttp();
 
   useEffect(() => {
     sendRequest(process.env.REACT_APP_BACKEND_URL + "/stories")
       .then((data) => {
-        let array= data.stories
+        let array = data.stories;
         array.map((e, i) => {
           array.map((v, ii) => {
             if (i !== ii) {
-              if(e.creator === v.creator) array.splice(ii, 1);
+              if (e.creator === v.creator) array.splice(ii, 1);
             }
-            return;
+            return 1;
           });
+          return 1;
         });
         setstory(array);
-        console.log(array)
+        console.log(array);
       })
       .catch((err) => {
         console.log(err);
       });
-     
   }, [sendRequest]);
-
-  
 
   return (
     <>
@@ -50,8 +46,9 @@ function Stories() {
           />
           <div className="stories-container">
             {story.map((s, i) => (
-              <Link key={s.storyUrl + i} to={'/stories/' + s.id}><img  src={s.imageUrl} alt="V" className="story-circle-box"/></Link>
-              
+              <Link key={s.storyUrl + i} to={"/stories/user/" + s.creator}>
+                <img src={s.imageUrl} alt="V" className="story-circle-box" />
+              </Link>
             ))}
           </div>
           <img
