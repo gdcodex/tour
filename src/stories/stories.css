@@ -67,6 +67,7 @@
   top: -16%;
   transform: rotateZ(180deg);
   left: -68px;
+  z-index: 50;
  
 }
 .arrow-span-scroll-two {
@@ -75,6 +76,7 @@
   width: 90px;
   top: -30%;
   right: -55px;
+  z-index: 50;
   
 }
 .no-stories{

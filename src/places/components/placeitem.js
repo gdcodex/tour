@@ -32,7 +32,7 @@ function Placeitem(props) {
     props.onDelete(props.id);
   }
   catch(err){
-    console.log('kuch nhi')
+    console.log('Error')
   }
 }
   if(isError){

@@ -70,8 +70,6 @@ function App() {
       clearTimeout();
     }
   }, [token, logout, tokenExpiration]);
-
-  console.log("ss");
   let routes;
   if (token) {
     routes = (
