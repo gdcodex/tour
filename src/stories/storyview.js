@@ -3,8 +3,8 @@ import { useParams, Link } from "react-router-dom";
 import LoadingSpinner from "../shared/components/UIElements/LoadingSpinner";
 import { useHttp } from "../shared/hooks/http-hook";
 import ErrorModal from "../shared/components/UIElements/ErrorModal";
-import './storyview.css';
-import moment from 'moment';
+import "./storyview.css";
+import moment from "moment";
 
 function Storyview() {
   const [loadedstories, setloadedstories] = useState(null);
@@ -33,17 +33,19 @@ function Storyview() {
         />
       )}
       <div className="story-view">
-     <Link to='/'>
-        <img src="/close.png" alt="Close" className="close-story-view"/>
-     </Link>
-      {
-          loadedstories && loadedstories.map((e,i)=>
-              <div key={e.id} className="story-view-box">
-                  <img src={e.storyUrl} alt="Not available !"/>
-                  <p className="story-time">{`Today at 2:14 pm`}↙️</p>
+        <Link to="/">
+          <img src="/close.png" alt="Close" className="close-story-view" />
+        </Link>
+        {loadedstories &&
+          loadedstories.map((e, i) => (
+            <div key={e.id} className="story-view-box">
+              <img src={e.storyUrl} alt="Not available !" />
+              <div className="story-time">
+                {moment(e.createdAt).fromNow()}
+                <img src="/feather.png"  id="feather-story" alt="!" />
               </div>
-          )
-      }
+            </div>
+          ))}
       </div>
     </>
   );

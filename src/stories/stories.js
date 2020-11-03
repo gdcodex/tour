@@ -30,6 +30,12 @@ function Stories() {
 
   return (
     <>
+    {!story && <div className="stories"  style={{borderBottom:"0.5px solid rgb(224, 230, 196)"}}>
+      <div className="no-stories">
+       <Link id="no-img" to='/story/new'>ADD </Link> 
+       {/* <span>Add Story</span> */}
+      </div>
+    </div>}
       {story && (
         <div className="stories">
           <img

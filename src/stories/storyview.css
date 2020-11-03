@@ -24,6 +24,7 @@
   width: 80%;
   border: 3px solid #FCD80C;
   transform: translateY(-3rem);
+  position: relative;
 }
 .story-view-box img {
   object-fit: cover;
@@ -39,5 +40,32 @@
 .story-time{
     color: seashell;
     font-style: italic;
-    align-self: flex-start;
+    position: absolute;
+    right: 30px;
+    top: -25px;
 }
+#feather-story{
+    width: 30px;
+    position: absolute;
+}
+@media only screen and (max-width: 795px) {
+    .story-time{
+        font-size: 10px;
+    }
+    #feather-story{
+        width: 20px;
+    }
+  }
+@media only screen and (max-width: 552px) {
+    .story-time{
+        font-size: 10px;
+        top: -20px;
+    }
+    #feather-story{
+        width: 20px;
+    }
+    .close-story-view {
+        width: 30px;
+      }
+
+  }
