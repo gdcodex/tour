@@ -48,8 +48,8 @@ const NewPlace = () => {
     }
 
      var formdata = new FormData();
-      formdata.append("title", formState.inputs.caption.value);
-      formdata.append("imageUrl", await fileRef.getDownloadURL());
+      formdata.append("caption", formState.inputs.caption.value);
+      formdata.append("storyUrl", await fileRef.getDownloadURL());
 
       var requestOptions = {
         method: "POST",
@@ -59,7 +59,7 @@ const NewPlace = () => {
       };
       try {
         const response = await fetch(
-          process.env.REACT_APP_BACKEND_URL + "/places",
+          process.env.REACT_APP_BACKEND_URL + "/stories",
           requestOptions
         );
         const responseData = await response.json();
