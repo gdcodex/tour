@@ -5,7 +5,7 @@ import "./stories.css";
 function Stories() {
   const [story, setstory] = useState(null);
 
-  const { sendRequest } = useHttp();
+  const {isLoading, sendRequest } = useHttp();
 
   useEffect(() => {
     sendRequest(process.env.REACT_APP_BACKEND_URL + "/stories")
@@ -29,7 +29,7 @@ function Stories() {
 
   return (
     <>
-    {!story && <div className="stories"  style={{borderBottom:"0.5px solid rgb(224, 230, 196)"}}>
+    {!story && !isLoading && <div className="stories"  style={{borderBottom:"0.5px solid rgb(224, 230, 196)"}}>
       <div className="no-stories">
        <Link id="no-img" to='/story/new'>ADD </Link> 
       </div>

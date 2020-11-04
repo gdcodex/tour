@@ -5,6 +5,7 @@
   justify-content: space-evenly;
   flex-direction: column;
   background-color: rgb(37, 34, 34);
+  min-height: 100vh;
 }
 .story-view::before{
     content: "";

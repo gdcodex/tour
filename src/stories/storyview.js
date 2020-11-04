@@ -34,7 +34,8 @@ function Storyview() {
       )}
       <div className="story-view">
         <Link to="/">
-          <img src="/close.png" alt="Close" className="close-story-view" />
+         {!isLoading && loadedstories && <img src="/close.png" alt="Close" className="close-story-view" />}
+         {!isLoading && !loadedstories && <img src="/close.png" alt="Close" className="close-story-view" />}
         </Link>
         {loadedstories &&
           loadedstories.map((e, i) => (
